@@ -1,0 +1,72 @@
+﻿@page
+@model BookClub.Pages.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<head>
+    <title> NERD Club</title>
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">Welcome to the Neat Earnest Reading Dudes Club!</h1>
+            <h3>(Or NERD Club)</h3>
+            
+            <div style="text-align:center">
+                <h2>This Week's Book</h2>
+                <a href="/Twilight">Twilight</a>
+                <p>
+                    <img src="https://vignette.wikia.nocookie.net/twilightsaga/images/3/3d/Twilight-cover.jpg/revision/latest?cb=20111113212258" />
+                </p>
+            </div>
+
+        </div>
+        <h2>Previous Books</h2>
+        <div class="row justify-content-center">
+
+            <div class="card text-white bg-primary mb-3 justify-content-center" style="max-width: 40rem;">
+                <div class="card-header"><a href="/BraveNewWorld">Brave New World</a></div>
+                <div class="card-body">
+                    <p class="card-text">Its brave! Its new! Its undoubtably taking place in our world! Wow!</p>
+                    <img src="http://bookcoverarchive.com/wp-content/uploads/amazon/brave_new_world.jpg" />
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3 offset-1" style="max-width: 40rem;">
+                <div class="card-header"><a href="/Frankenstien">Frankenstien</a></div>
+                <div class="card-body">
+                    <p class="card-text">No Frankenstien is not the name of the monster...</p>
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51QIx3YlM6L._SX312_BO1,204,203,200_.jpg" />
+                </div>
+            </div>
+                        
+            <div class="card text-white bg-primary mb-3 justify-content-center" style="max-width: 40rem;">
+                <div class="card-header"><a href="/ProfessionalCSharp6andNETCore1">Professional C# 6.0 and .NET Core 1.0</a></div>
+                <div class="card-body">
+                    <p class="card-text">Profound! Exquisite! A must read for any developer!</p>
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51NiTxRMDJL._SX397_BO1,204,203,200_.jpg" />
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="navbar-expand-lg navbar-dark bg-primary navbar">
+            @if (DateTime.Now.ToString("tt") == "AM" && DateTime.Now.Hour > 5)
+            {
+                <span class="text-muted">Good Morning!</span>
+            }
+            else if (DateTime.Now.ToString("tt") == "PM" && DateTime.Now.Hour < 6)
+            {
+                 <span class="text-muted">Good Afternoon!</span>
+            }
+            else
+            {
+                 <span class="text-muted">Good Evening!</span>
+            }
+        </div>
+    </footer>
+</body>
